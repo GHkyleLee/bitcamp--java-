@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        div.tooltip{
+            line-height: 1.5;
+            color: white;
+            width: 200px;
+            background-color: orange;
+            border: 2 solid wheat;
+            padding: 1em;
+            font-size: 12px;
+            border-radius: 30px;
+        }
+    </style>
+    <script>
+        $(function(){
+            //툴팁에 css 추가
+            $("div.tooltip").css({
+                "opacity":"0.9",
+                "position":"absolute",
+                "display":"none"
+            });
+
+            $("b.view").bind({
+                mouseover:function(){
+                    $("div.tooltip").fadeIn();
+                },
+                mouseout:function(){
+                    $("div.tooltip").fadeOut();
+                },
+                mousemove:function(e){
+                    $("div.tooltip").css({
+                        top:e.pageX+10+"px",
+                        left:e.pageY+10+"px",
+                        fontSize:"25px"
+                    });
+                    //b.view의 text를 얻어서 툴팁에 넣기
+                    $("div.tooltip").text($(this).text());
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <h3>Tooltip 링크 부분에 마우스를 올려보세요</h3>
+    <a style="font-size: 20px; cursor: pointer;">Tooltip</a>
+    <pre>
+        올 2월 예금은행의 가계대출 금리가 3.93%를 기록했다. 주택담보대출 금리는 3.88%로 8년11개월만에 최고치를 찍었다.
+        저금리 기조 장기화로 가계대출을 상환 능력 이상으로 끌어당겨 쓴 '영끌(영혼까지 끌어모아 대출)·빚투(빚내서 투자)족'들의 이자부담은 눈덩이처럼 불어나고 있다.
+        <b class="view">31일 한국은행</b>이 발표한 '2022년 2월 중 금융기관 가중평균 금리(잠정)'에 따르면 2월 예금은행의 가계대출 금리는 3.93%로 2014년 7월(3.93%) 이후 7년7개월만에 가장 높은 수치를 기록했다. 전월(3.91%)과 비교하면 0.02%포인트 오른 수준이다.
+        2020년 시작된 신종 코로나바이러스 감염증(코로나19) 확산으로 경기 침체를 우려한 한국은행이 같은해 5월 기준금리를 사상 최저 수준인 0.5%로 낮추면서 금융권 가계대출 금리는 2020년 8월 2.55%로 역대 최저치를 기록했다. 
+        이후 가계대출 <b class="view">금리는 2% 후반대에서 등락을 반복하다</b> 한국은행이 기준금리를 0.75%로 올렸던 2021년 8월 가계대출 금리는 3.10%로 3%를 넘어섰다. 이어 가계대출 금리는 3%대에서 상승세를 지속하다가 지난달 4%에 육박한 것이다.
+    </pre>
+    <div class="tooltip">
+        Java<br>
+        HTML<br>
+        jQuery<br>
+        Oracle<br>
+        SpringBoot<br>
+    </div>
+</body>
+</html>
