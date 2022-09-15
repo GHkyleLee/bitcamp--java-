@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>  
+<style>
+            div{
+            position:absolute;
+            left: 400px;
+            width: 400px;
+            height: 500px;
+            padding: 10px;
+            cursor: pointer;
+            }
+
+    </style>
+    <script>
+        $(function(){
+        var arr=["../연예인사진/12.jpg","../연예인사진/13.jpg","../연예인사진/14.jpg","../연예인사진/15.jpg","../연예인사진/16.jpg"];
+          
+        $("#random").attr("src",arr[0]);
+    
+        $("div").click(function(){
+            var rnd=parseInt(Math.random()*5);
+            $("#random").attr("src",arr[rnd]);
+            });
+        });
+    </script>
+
+</head>
+<body>
+ <div >
+ <img src="" id="random">
+</div>  
+    
+</body>
+</html>
