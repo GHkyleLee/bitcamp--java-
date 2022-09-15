@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">   
+    <style>
+        body{
+            font-size: 2.2em;
+        }
+        #main{/* body의 모든 하위태그들*/
+            
+            height:600px;
+            float:left;
+            width:400px;
+            text-align: center;
+            font-family: 'Jua';
+            border:5px solid red;
+            line-height: 50px;
+            margin-bottom: 20px;
+            border-radius: 100px;
+            
+        }
+        #msg{
+            
+            float: right;
+            width:400px;
+            font-size:1.5em;
+            text-align: center;
+            font-family: 'Jua';
+            border:5px solid orange;
+            height:600px;
+            line-height: 50px;
+            margin-bottom: 20px;
+            border-radius: 100px;
+            }
+            button{
+                width: 150px;
+                height: 40px;
+                line-height: 40px;
+                font-family: 'Jua';
+                font-size: 1.2em;
+                background-color:darkorange;
+                color: blue;
+                border-style: groove yellow;
+                border-radius: 100px;
+            }
+            button:hover{
+                box-shadow: 5px 5px 5px gray;
+            }
+            input type:target-text{
+                font-size: 4.5em;
+                font-family: 'Lobster';
+
+            }
+        </style>
+        <script>
+            window.onload=function(){
+                var name=document.getElementById("txtname")
+                var j=document.getElementById("jr")
+                var h=document.getElementById("hr")
+                var s=document.getElementById("sum")
+                var a=document.getElementById("avg")                
+                var m=document.getElementById("msg")
+                
+               
+
+                document.getElementById("btn1").onclick=function(){
+                    if(name.value==''){
+                        alert("이름을 입력해주세요");//경고창
+                        name.focus();
+                        return;                        
+                    }
+                    if(!isNaN(name.value)){
+                        alert("문자만 입력해주세요");
+                        name.focus();
+                        return;
+                    }
+                    if(jr.value==''){
+                        alert("java 점수를 입력해주세요");//경고창
+                        j.focus();
+                        return;  
+                    }
+                    if(isNaN(jr.value)){
+                        alert("java 점수에 숫자만 입력해주세요");
+                        j.focus();
+                        return;
+                    }                   
+                    if(hr.value==''){
+                        alert("html 점수를 입력해주세요");//경고창
+                        h.focus();
+                        return;  
+                    }
+                   if(isNaN(hr.value)){
+                        alert("html 점수에 숫자만 입력해주세요");
+                        h.focus();
+                        return;
+                    }
+                    var s=parseInt(jr.value)+parseInt(hr.value);
+                    var a=parseFloat(s)/2;
+                    m.innerHTML="<br><br>이름 :"+name.value+"<br><br>자바점수 :"+jr.value+"점<br><br>html점수 :"+hr.value+"점<br><br>총합 :"+s+" 점<br><br>평균 :"+a+"점";
+
+                }
+            }
+        </script>
+</head>
+<body>
+    <br><br><br><br>
+   <dvi id="main">
+    <br><br>    
+    <b>이름</b>
+    <input type="text" id="txtname" style="width: 150px; height:50px;font-size: 1.3em;"autofocus;>
+    <br><br>
+    <b>자바 점수</b>
+    <input type="text" id="jr" style="width: 150px; height:50px; font-size: 1.3em;" >
+    <br><br>
+    <b>HTML 점수</b>
+    <input type="text" id="hr" style="width: 150px; height:50px; font-size: 1.3em;">
+    <br><br>
+    <button type="button" id="btn1">결과</button>
+</dvi>
+    <dvi id="msg">
+        </dvi>
+   
+        
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+    #msg{
+            width:300px;
+            font-size: 1.5em;
+            text-align: center;
+            font-family: 'jua';
+            border: 2px solid pink;
+            height: 370px;
+            line-height: 30px;
+            margin-bottom: 100px;
+            float: right;
+        }
+        button{
+            width: 180px;
+            height: 50px;
+            line-height: 50px;
+            font-family: 'jua';
+            font-size: 1.3em;
+            background-color: pink;
+            color: black;      
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+
+        <script>
+            window.onload=function(){
+            var name=document.getElementById("txtname");
+            var java=document.getElementById("txtjava");
+            var HTML=document.getElementById("txtHTML");
+            var m=document.getElementById("msg");
+            var su=document.getElementById("sum");
+            var av=document.getElementById("avg");
+
+            document.getElementById("btn1").onclick=function(){
+                
+                if(name.value==''){
+                    alert("이름을 입력해주세요")
+                    name.focus();
+                    return;
+                }
+
+                if(java.value==''){
+                    alert("자바 점수를 입력해주세요")
+                    java.focus();
+                    return;
+                }
+                if(HTML.value==''){
+                    alert("HTML 점수를 입력해주세요")
+                    HTML.focus();
+                    return;
+                }
+                var su= parseInt(txtjava.value)+parseInt(txtHTML.value);
+                
+                m.innerHTML="<br>이름:"+txtname.value+"<br><br>"+"자바:"+txtjava.value+"<br><br>"+"HTML"+txtHTML.value+"<br><br>"+su;             
+            }
+        }
+        </script>
+</head>
+<body>
+    <br><br>
+    <div.a id="msg"></div.a>
+    <br><br>
+    <b>이름&nbsp;&nbsp;</b>
+    <input type="text" id="txtname" style="width: 120px;">
+    <br><br>
+    <b>자바&nbsp;&nbsp;</b>
+    <input type="text" id="txtjava" style="width: 120px;">
+    <br><br>
+    <b>HTML</b>
+    <input type="text" id="txtHTML" style="width: 120px;">
+    <br><br>
+    <button type="button" id="btn1">결과</button>
+    
+</body>
+</html>
